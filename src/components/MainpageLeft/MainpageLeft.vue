@@ -19,7 +19,7 @@
 import MainStartBtn from '../MainStartBtn/MainStartBtn'
 import MainBusSmoke from '../MainBusSmoke/MainBusSmoke'
 export default {
-  name: 'LeftMainpage',
+  name: 'MainpageLeft',
   components: {MainBusSmoke, MainStartBtn},
   data () {
     return {

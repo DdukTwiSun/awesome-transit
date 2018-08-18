@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="Left_page">
-      <LeftMainpage></LeftMainpage>
+      <MainpageLeft/>
     </div>
     <div class="Right_page">
     </div>
@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import LeftMainpage from '../LeftMainpage/LeftMainpage'
+import MainpageLeft from '../MainpageLeft/MainpageLeft'
 export default {
   name: 'Mainpage',
-  components: {LeftMainpage},
+  components: {MainpageLeft},
   data () {
     return {
     }
