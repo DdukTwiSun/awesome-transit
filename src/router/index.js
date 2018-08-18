@@ -10,6 +10,5 @@ export default new Router({
       path: '/',
       name: 'Mainpage',
       component: Mainpage
-    }
-  ]
+    }]
 })
