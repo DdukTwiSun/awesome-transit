@@ -9,10 +9,7 @@
       </div>
     </div>
     <div class="second_line">
-      <p>이 프로젝트는 얼굴인식을 통한 대중교통 결제시스템을 만드는 프로젝트입니다.</p>
-      <p>이 프로젝트는 얼굴인식을 통한 대중교통 결제시스템을 만드는 프로젝트입니다.</p>
-      <p>이 프로젝트는 얼굴인식을 통한 대중교통 결제시스템을 만드는 프로젝트입니다.</p>
-      <p>이 프로젝트는 얼굴인식을 통한 대중교통 결제시스템을 만드는 프로젝트입니다.</p>
+      <p>{{explain_msg}}</p>
     </div>
     <div class="third_line">
       <input type="button" class="start_btn">
@@ -25,7 +22,9 @@ export default {
   name: 'Mainpage',
   data () {
     return {
-      msg: 'Awesome Transit'
+      msg: 'Awesome Transit',
+      explain_msg: '이 프로젝트는 얼굴인식을 통한 대중교통 결제시스템을 만드는 프로젝트입니다.'
+
     }
   }
 }
