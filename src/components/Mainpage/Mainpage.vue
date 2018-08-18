@@ -1,18 +1,22 @@
 <template>
   <div class="main">
+    <Navbar/>
     <div class="Left_page">
       <MainpageLeft/>
     </div>
     <div class="Right_page">
+      <MainpageRight/>
     </div>
   </div>
 </template>
 
 <script>
 import MainpageLeft from '../MainpageLeft/MainpageLeft'
+import MainpageRight from '../MainpageRight/MainpageRight'
+import Navbar from '../Navbar'
 export default {
   name: 'Mainpage',
-  components: {MainpageLeft},
+  components: {Navbar, MainpageRight, MainpageLeft},
   data () {
     return {
     }
@@ -24,10 +28,15 @@ export default {
   .main {
     width: 100%;
     display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
   }
   .Left_page {
     width: 50%;
+    float: left;
   }
   .Right_page {
+    width: 50%;
+    left: 0;
   }
 </style>

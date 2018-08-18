@@ -17,7 +17,7 @@ export default {
     background: url("/static/1/Get_started_button.png") no-repeat;
     background-size: contain;
     width: 240px;
-    height: 91px;
+    height: 80px;
     top: 250px;
     left: 50px;
     border: 0;
