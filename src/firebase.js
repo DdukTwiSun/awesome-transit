@@ -12,10 +12,7 @@ const config = {
 firebase.initializeApp(config)
 export const db = firebase.database()
 
-export const notiRef = db.ref('noti')
-export const noti = {
-  source: notiRef,
-  asObject: true
-}
+export const notiEnterRef = db.ref('noti_enter')
+export const notiLeaveRef = db.ref('noti_leave')
 
 export const userRef = db.ref('user')
