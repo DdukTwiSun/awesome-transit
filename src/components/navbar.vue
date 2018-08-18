@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'Mainpage',
+  name: 'Navbar',
   data () {
     return {
       msg: 'Awesome Transit',
