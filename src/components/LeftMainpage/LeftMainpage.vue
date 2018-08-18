@@ -11,14 +11,16 @@
       </div>
       <MainStartBtn/>
     </div>
+    <MainBusSmoke/>
   </div>
 </template>
 
 <script>
 import MainStartBtn from '../MainStartBtn/MainStartBtn'
+import MainBusSmoke from '../MainBusSmoke/MainBusSmoke'
 export default {
   name: 'LeftMainpage',
-  components: {MainStartBtn},
+  components: {MainBusSmoke, MainStartBtn},
   data () {
     return {
     }
