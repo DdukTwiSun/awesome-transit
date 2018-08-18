@@ -1,8 +1,24 @@
-# awesome-transit
+# <p align="center">Awesome-Transit</p>
 
-> A Vue.js project
+***
 
-## Build Setup
+<p align="center"><a href="#"><img src="https://img.shields.io/badge/RUGAOHACK-2th-red.svg"></a><a href="https://github.com/DdukTwiSun/APS/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg"></a></p>
+
+## Overview
+
+🚃2018 RUGAO Opensource Space Hackathon🚌
+
+*****
+
+1. [Demo](#demo) 
+2. [Installation](#installation) 
+3. [License](#license) 
+
+***
+
+## Demo
+
+## Installation
 
 ``` bash
 # install dependencies
@@ -28,3 +44,7 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## License
+
+* [MIT License](LICENSE)
