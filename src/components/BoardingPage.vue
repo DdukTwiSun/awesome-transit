@@ -1,49 +1,110 @@
 <template>
-  <div>
-  </div>
+  <v-layout>
+    <v-flex xs12 sm6 class="card-flex">
+      <v-card>
+        <v-card-media
+          :src="enterPhotoUrl"
+          height="300">
+        </v-card-media>
+        <v-card-title>
+          <h1 style="width:100%"> Enter </h1>
+          <ul style="text-align:left;">
+            <li><b>User</b>: {{ enterEmail }}</li>
+            <li><b>Payment</b>: {{ enterPayment }}</li>
+            <li><b>Date</b>: {{ enterTimestamp }}</li>
+          </ul>
+        </v-card-title>
+      </v-card>
+    </v-flex>
+    <v-flex xs12 sm6 class="card-flex">
+      <v-card>
+        <v-card-media
+          :src="leavePhotoUrl"
+          height="300">
+        </v-card-media>
+        <v-card-title>
+          <h1 style="width:100%"> Leave </h1>
+          <ul style="text-align:left;">
+            <li><b>User</b>: {{ leaveEmail}}</li>
+            <li><b>Payment</b>: {{ leavePayment }}</li>
+            <li><b>Date</b>: {{ leaveTimestamp }}</li>
+          </ul>
+        </v-card-title>
+      </v-card>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
-import { notiRef, userRef } from '../firebase'
+import { notiEnterRef, notiLeaveRef, userRef } from '../firebase'
 
 export default {
   name: 'BoardingPage',
   firebase: {
-    noti: {
-      source: notiRef,
+    notiEnter: {
+      source: notiEnterRef,
+      asObject: true
+    },
+    notiLeave: {
+      source: notiLeaveRef,
       asObject: true
     }
+
   },
   data () {
     return {
-      photo_url: null,
-      balance: 0
+      enterPhotoUrl: null,
+      enterBalance: 0,
+      enterEmail: null,
+      leavePhotoUrl: null,
+      leaveBalance: 0,
+      leaveEmail: null
     }
   },
   computed: {
-    userId () {
-      return this.noti.user_id
+    enterUserId () {
+      return this.notiEnter.user_id
     },
-    state () {
-      return this.noti.state
+    enterPayment () {
+      return this.notiEnter.payment
     },
-    payment () {
-      return this.noti.payment
+    enterTimestamp () {
+      return (new Date(this.notiEnter.timestamp * 1000)).toString()
+    },
+    leaveUserId () {
+      return this.notiLeave.user_id
+    },
+    leavePayment () {
+      return this.notiLeave.payment
+    },
+    leaveTimestamp () {
+      return (new Date(this.notiLeave.timestamp * 1000)).toString()
     }
   },
   mounted () {
-    notiRef.on('value', () => this.loadUserInfo())
+    notiEnterRef.on('value', () => this.loadEnterUserInfo())
+    notiLeaveRef.on('value', () => this.loadLeaveUserInfo())
   },
   methods: {
-    loadUserInfo () {
-      if (this.userId) {
-        console.log('loadUserInfo')
-
-        userRef.child(this.userId).once('value',
+    loadEnterUserInfo () {
+      if (this.enterUserId) {
+        userRef.child(this.enterUserId).once('value',
           (snapshot) => {
             const val = snapshot.val()
-            this.profile_image = val.photo_url
-            this.balance = val.balance
+            this.enterPhotoUrl = val.photo_url
+            this.enterBalance = val.balance
+            this.enterEmail = val.email
+          })
+      }
+    },
+    loadLeaveUserInfo () {
+      if (this.leaveUserId) {
+        userRef.child(this.leaveUserId).once('value',
+          (snapshot) => {
+            const val = snapshot.val()
+            this.leavePhotoUrl = val.photo_url
+            this.leaveBalance = val.balance
+            this.leaveEmail = val.email
           })
       }
     }
@@ -53,4 +114,7 @@ export default {
 </script>
 
 <style>
+.card-flex {
+  padding: 20px;
+}
 </style>
