@@ -13,7 +13,7 @@ export default {
 
 <style>
   body {
-    background: url("/static/bg.png");
+    background: url("/static/1/bg.png");
     background-size: 100%;
   }
   #app {

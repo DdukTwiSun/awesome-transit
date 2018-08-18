@@ -2,12 +2,12 @@
   <div class="left_main">
     <div class="logo_div">
       <div class="logo">
-        <img src="/static/logo.png"/>
+        <img src="/static/1/logo.png"/>
       </div>
     </div>
     <div class="proj_name_div">
       <div class="proj_name">
-        <img src="/static/AWESOME TRANSIT_head.png"/>
+        <img src="/static/1/AWESOME TRANSIT_head.png"/>
       </div>
     </div>
   </div>

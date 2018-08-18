@@ -5,10 +5,9 @@
 
 <script>
 export default {
-  name: "BoardingPage",
-  date() {
+  name: 'BoardingPage',
+  date () {
     return {
-
     }
   }
 }
