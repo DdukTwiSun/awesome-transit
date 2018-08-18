@@ -9,13 +9,16 @@
       <div class="proj_name">
         <img src="/static/1/AWESOME TRANSIT_head.png"/>
       </div>
+      <MainStartBtn/>
     </div>
   </div>
 </template>
 
 <script>
+import MainStartBtn from '../MainStartBtn/MainStartBtn'
 export default {
   name: 'LeftMainpage',
+  components: {MainStartBtn},
   data () {
     return {
     }
@@ -43,6 +46,8 @@ export default {
   /*proj_name*/
   .proj_name_div {
     position: absolute;
+    display: flex;
+    flex-direction: column;
   }
   .proj_name_div .proj_name {
     position: relative;
