@@ -1,6 +1,22 @@
 <template>
-  <div>
-  </div>
+  <v-layout>
+    <v-flex xs12 sm6 offset-sm3>
+      <v-card>
+        <v-card-media
+          :src="photo_url"
+          height="300">
+        </v-card-media>
+        <v-card-title>
+          <h1 style="width:100%"> {{ state }} </h1>
+          <ul style="text-align:left;">
+            <li><b>User</b>: {{ email }}</li>
+            <li><b>Payment</b>: {{ payment }}</li>
+            <li><b>Date</b>: {{ timestamp }}</li>
+          </ul>
+        </v-card-title>
+      </v-card>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -17,7 +33,8 @@ export default {
   data () {
     return {
       photo_url: null,
-      balance: 0
+      balance: 0,
+      email: null
     }
   },
   computed: {
@@ -29,6 +46,9 @@ export default {
     },
     payment () {
       return this.noti.payment
+    },
+    timestamp () {
+      return (new Date(this.noti.timestamp * 1000)).toString()
     }
   },
   mounted () {
@@ -42,8 +62,9 @@ export default {
         userRef.child(this.userId).once('value',
           (snapshot) => {
             const val = snapshot.val()
-            this.profile_image = val.photo_url
+            this.photo_url = val.photo_url
             this.balance = val.balance
+            this.email = val.email
           })
       }
     }
