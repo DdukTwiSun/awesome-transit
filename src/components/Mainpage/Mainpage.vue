@@ -6,23 +6,53 @@
     <div class="Right_page">
       <MainpageRight/>
     </div>
+    <v-dialog class="webcam-dialog" v-model="webcamDialog" max-width="670">
+      <v-card v-if="webcamDialog" class="wecam-card" style="background-color:white;">
+        <web-cam ref="webcam" :deviceId="deviceId" @cameras="onCameras"></web-cam>
+        <v-btn color="red" @click="onCapture">Capture</v-btn>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
 <script>
 import MainpageLeft from '../MainpageLeft/MainpageLeft'
 import MainpageRight from '../MainpageRight/MainpageRight'
+import { WebCam } from 'vue-web-cam'
+
 export default {
   name: 'Mainpage',
-  components: {MainpageRight, MainpageLeft},
+  components: {MainpageRight, MainpageLeft, WebCam},
   data () {
     return {
+      webcamDialog: false,
+      deviceId: null
+    }
+  },
+  mounted () {
+    global.globalBus.$on('camera-click', this.onCameraClick)
+  },
+  beforeDestroy () {
+    global.globalBus.$off('camera-click', this.onCameraClick)
+  },
+  methods: {
+    onCameraClick () {
+      this.webcamDialog = true
+    },
+    onCameras (cameras) {
+      console.log(cameras)
+      this.deviceId = cameras[0].deviceId
+    },
+    onCapture () {
+      const img = this.$refs.webcam.capture()
+      global.globalBus.$emit('photo-capture', img)
+      this.webcamDialog = false
     }
   }
 }
 </script>
 
-<style scoped>
+<style>
   .main {
     width: 100%;
     display: flex;
