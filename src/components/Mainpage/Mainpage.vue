@@ -44,8 +44,10 @@ export default {
       this.deviceId = cameras[0].deviceId
     },
     onCapture () {
-      const img = this.$refs.webcam.capture()
+      const webcam = this.$refs.webcam
+      const img = webcam.capture()
       global.globalBus.$emit('photo-capture', img)
+      webcam.stop()
       this.webcamDialog = false
     }
   }
