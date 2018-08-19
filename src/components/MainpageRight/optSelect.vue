@@ -3,7 +3,7 @@
     <table>
       <tr>
         <td><img class="camera" v-on:click="camera_click" src="/static/1-1/icon1.png"/></td>
-        <td><img src="/static/1-1/Enter your info.png"></td>
+        <td><img src="/static/1-1/Shoot your face.png"></td>
         <td><img src="/static/1-2/Ok.png"/></td>
       </tr>
       <tr>
@@ -11,7 +11,7 @@
       </tr>
       <tr>
         <td><img class="information" v-on:click="info_click" src="/static/1-1/icon2.png"/></td>
-        <td><img src="/static/1-1/Shoot your face.png"></td>
+        <td><img src="/static/1-1/Enter your info.png"></td>
         <td><img src="/static/1-2/Ok.png"/></td>
       </tr>
     </table>
