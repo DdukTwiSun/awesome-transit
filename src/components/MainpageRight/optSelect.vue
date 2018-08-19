@@ -31,7 +31,8 @@ export default {
   components: {},
   methods: {
     camera_click () {
-      alert('camera clicked!!')
+      global.globalBus.$emit('camera-click')
+      console.log('camera clicked!!')
     },
     info_click () {
       alert('information clicked!!')

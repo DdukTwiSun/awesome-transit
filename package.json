@@ -19,6 +19,7 @@
     "stylus-loader": "^3.0.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
+    "vue-web-cam": "^1.2.3",
     "vuefire": "^1.4.5",
     "vuetify": "^1.1.13"
   },
