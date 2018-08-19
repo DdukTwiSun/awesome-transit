@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { photo, email, password } from '../../store'
 export default {
   name: 'MainStartBtn',
   data () {
@@ -18,9 +19,22 @@ export default {
       this.isSendMode = true
       global.globalBus.$emit('main-start-click')
     },
-    regSend () {
-      alert('Registration complete!!')
-      this.isSendMode = !(this.isSendMode)
+    async regSend () {
+      console.log(photo, email, password)
+
+      let formData = new FormData()
+      formData.append('photo', photo)
+      formData.append('email', email)
+      formData.append('password', password)
+
+      let result = await fetch(
+        'https://3putl16z3f.execute-api.ap-northeast-1.amazonaws.com/dev/signup',
+        {
+          method: 'POST',
+          body: formData
+        })
+      console.log(result)
+
       global.globalBus.$emit('main-send-click')
     }
   }

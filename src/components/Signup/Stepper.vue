@@ -77,7 +77,10 @@ export default {
       alert('Account register complete!!')
     },
     submit () {
-      global.globalBus.$emit('account-submit')
+      global.globalBus.$emit('account-submit', {
+        email: this.registration.email,
+        password: this.registration.password
+      })
     }
   }
 }
