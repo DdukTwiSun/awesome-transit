@@ -81,6 +81,7 @@ export default {
         email: this.registration.email,
         password: this.registration.password
       })
+      global.globalBus.$emit('info-complete')
     }
   }
 }
