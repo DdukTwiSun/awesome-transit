@@ -5,7 +5,10 @@
 
 ## Overview
 
-🚃2018 RUGAO Opensource Space Hackathon🚌
+> Public transportation billing system with face recognition
+
+Awesome-transit is a project that allows passenger just getting on the transportation without any action.
+If you refer to this project, you can proceed with the project using your own face recognition api.
 
 *****
 
