@@ -9,6 +9,7 @@ import Vuetify from 'vuetify'
 Vue.use(Vuetify)
 Vue.use(VueFire)
 
+global.globalBus = new Vue()
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
