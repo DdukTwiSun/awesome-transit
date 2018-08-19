@@ -19,6 +19,7 @@ export default {
     width: 675px;
     bottom: 0;
     right: 0;
+    /* visibility: hidden; */
   }
   .bus_img_div img {
     max-width: 100%;

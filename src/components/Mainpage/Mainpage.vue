@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    <Navbar/>
     <div class="Left_page">
       <MainpageLeft/>
     </div>
