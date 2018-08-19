@@ -1,15 +1,21 @@
 <template>
-  <div class="bus_img_div">
-    <Stepper/>
+  <div>
+    <div class="stp">
+      <Stepper/>
+    </div>
+    <div class="opt">
+      <optSelect/>
+    </div>
     <!--<img src="/static/1/bus.png"/>-->
   </div>
 </template>
 
 <script>
 import Stepper from '../Signup/Stepper'
+import optSelect from './optSelect'
 export default {
   name: 'MainpageRight',
-  components: {Stepper}
+  components: {Stepper, optSelect}
 }
 </script>
 
@@ -19,9 +25,8 @@ export default {
     width: 675px;
     bottom: 0;
     right: 0;
-    /* visibility: hidden; */
   }
-  .bus_img_div img {
-    max-width: 100%;
+  .stp{
+    display: none;
   }
 </style>
