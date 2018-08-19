@@ -7,6 +7,6 @@
    "corsConfiguration": [],
    "enableCloudfront": false,
    "retries": 20,
-   "domain": "awesome-transit-demo",
+   "domain": "awesome-transit.make.codes",
    "configFile": ".s3-website.json"
 }
