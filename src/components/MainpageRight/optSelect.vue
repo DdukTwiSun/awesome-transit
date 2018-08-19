@@ -10,7 +10,7 @@
         <td colspan="3" style="border: 1px solid gray; opacity: 0.4;"></td>
       </tr>
       <tr>
-        <td><img class="information" v-on:click="info_click" src="/static/1-1/icon2.png"/></td>
+        <td><img class="information" v-on:click="dialog2 = true" src="/static/1-1/icon2.png"/></td>
         <td><img src="/static/1-1/Enter your info.png"></td>
         <td><img src="/static/1-2/Ok.png"/></td>
       </tr>
@@ -21,6 +21,13 @@
 <script>
 export default {
   name: 'optSelect',
+  data () {
+    return {
+      dialog: false,
+      dialog2: false,
+      dialog3: false
+    }
+  },
   components: {},
   methods: {
     camera_click () {
