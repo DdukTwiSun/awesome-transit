@@ -32,12 +32,11 @@
           </v-stepper-content>
           <v-stepper-content step="3">
 
-            <v-text-field label="Phone Number" type="phone"
+            <v-flex>
+              <v-text-field label="Phone Number" type="phone"
                           v-model="registration.phoneNumber" required></v-text-field>
-            <v-select label="Card" v-model="registration.card" :items="cards" @keyup.enter="addValue" required></v-select>
-            <v-text-field label="Card Number" type="credit-card"
-                          v-model="registration.cardNumber" required></v-text-field>
-
+              <v-btn color="cyan lighten-3" @click="checkAccount">REGISTER ACCOUNT</v-btn>
+            </v-flex>
             <v-btn flat @click.native="step = 2">Previous</v-btn>
             <v-btn color="primary" @click.prevent="submit">Save</v-btn>
 
@@ -69,11 +68,13 @@ export default {
       nameRules: [
         (v) => !!v || 'Name is required',
         (v) => (v && v.length <= 10) || 'Name must be less than 10 characters'
-      ],
-      cards: ['Visa', 'Mastercard', 'American Express']
+      ]
     }
   },
   methods: {
+    checkAccount () {
+      alert('Account register complete!!')
+    },
     submit () {
       alert('registration done!!')
     }
