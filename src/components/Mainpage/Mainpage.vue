@@ -26,6 +26,7 @@ export default {
   data () {
     return {
       webcamDialog: false,
+      captured: false,
       deviceId: null
     }
   },
@@ -44,6 +45,8 @@ export default {
       this.deviceId = cameras[0].deviceId
     },
     onCapture () {
+      this.captured = true
+      global.globalBus.$emit('capture-complete')
       const webcam = this.$refs.webcam
       const img = webcam.capture()
       global.globalBus.$emit('photo-capture', img)

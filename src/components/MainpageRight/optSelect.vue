@@ -4,7 +4,7 @@
       <tr>
         <td><img class="camera" v-on:click="camera_click" src="/static/1-1/icon1.png"/></td>
         <td><img src="/static/1-1/Shoot your face.png"></td>
-        <td><img src="/static/1-2/Ok.png"/></td>
+        <td><img src="/static/1-2/Ok.png" v-if="captureClear"/></td>
       </tr>
       <tr>
         <td colspan="3" style="border: 1px solid gray; opacity: 0.4;"></td>
@@ -12,7 +12,7 @@
       <tr>
         <td><img class="information" v-on:click="dialog2 = true" src="/static/1-1/icon2.png"/></td>
         <td><img src="/static/1-1/Enter your info.png"></td>
-        <td><img src="/static/1-2/Ok.png"/></td>
+        <td><img src="/static/1-2/Ok.png" v-if="infoClear"/></td>
       </tr>
     </table>
     <div>
@@ -35,7 +35,9 @@ export default {
   name: 'optSelect',
   data () {
     return {
-      dialog2: false
+      dialog2: false,
+      captureClear: false,
+      infoClear: false
     }
   },
   components: {
@@ -43,19 +45,26 @@ export default {
   },
   mounted () {
     global.globalBus.$on('account-submit', this.submit_click)
+    global.globalBus.$on('capture-complete', this.capture_clear)
+    global.globalBus.$on('info-complete', this.info_clear)
   },
   beforeDestroy () {
     global.globalBus.$off('account-submit', this.submit_click)
+    global.globalBus.$off('capture-complete', this.capture_clear)
+    global.globalBus.$off('info-complete', this.info_clear)
   },
   methods: {
     camera_click () {
       global.globalBus.$emit('camera-click')
     },
-    info_click () {
-      alert('information clicked!!')
-    },
     submit_click () {
       this.dialog2 = false
+    },
+    capture_clear () {
+      this.captureClear = !(this.captureClear)
+    },
+    info_clear () {
+      this.infoClear = !(this.infoClear)
     }
   }
 }
