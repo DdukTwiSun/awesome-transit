@@ -101,9 +101,10 @@
             <div style="flex: 1 1 auto;"></div>
           </v-card>
         </v-dialog>
-        <v-dialog v-model="dialog2" max-width="500px">
-          <v-card>
-            <v-card-title>
+        <v-dialog class="dialog" v-model="dialog2" max-width="800px">
+          <v-card style="background-color:white;">
+            <stepper></stepper>
+<!--            <v-card-title>
               Dialog 2
             </v-card-title>
             <v-card-text>
@@ -113,7 +114,7 @@
                 label="A Select List"
                 item-value="text"
               ></v-select>
-            </v-card-text>
+            </v-card-text> -->
             <v-card-actions>
               <v-btn color="primary" flat @click.stop="dialog2=false">Close</v-btn>
             </v-card-actions>
@@ -145,6 +146,8 @@
 </template>
 
 <script>
+import Stepper from "../Signup/Stepper.vue"
+
 export default {
   name: 'optSelect',
   data () {
@@ -154,7 +157,9 @@ export default {
       dialog3: false
     }
   },
-  components: {},
+  components: {
+    Stepper
+  },
   methods: {
     camera_click () {
       alert('camera clicked!!')
@@ -167,6 +172,9 @@ export default {
 </script>
 
 <style scoped>
+  .dialog {
+    background-color: white;
+  }
   table{
     background-color: white;
     margin-top: 300px;
