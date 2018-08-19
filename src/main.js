@@ -5,7 +5,6 @@ import App from './App'
 import router from './router'
 import VueFire from 'vuefire'
 import Vuetify from 'vuetify'
-import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 Vue.use(Vuetify)
 Vue.use(VueFire)

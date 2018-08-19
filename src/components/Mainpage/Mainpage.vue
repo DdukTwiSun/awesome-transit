@@ -13,10 +13,9 @@
 <script>
 import MainpageLeft from '../MainpageLeft/MainpageLeft'
 import MainpageRight from '../MainpageRight/MainpageRight'
-import Navbar from '../Navbar'
 export default {
   name: 'Mainpage',
-  components: {Navbar, MainpageRight, MainpageLeft},
+  components: {MainpageRight, MainpageLeft},
   data () {
     return {
     }
