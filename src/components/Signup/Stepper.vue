@@ -34,7 +34,7 @@
 
             <v-text-field label="Phone Number" type="phone"
                           v-model="registration.phoneNumber" required></v-text-field>
-            <v-select label="Card" v-model="registration.card" :items="cards" autocomplete @keyup.enter="addValue" required></v-select>
+            <v-select label="Card" v-model="registration.card" :items="cards" @keyup.enter="addValue" required></v-select>
             <v-text-field label="Card Number" type="credit-card"
                           v-model="registration.cardNumber" required></v-text-field>
 
@@ -60,16 +60,16 @@ export default {
         email: null,
         password: null,
         name: null,
-        nameRules: [
-          (v) => !!v || 'Name is required',
-          (v) => v && v.length <= 10 || 'Name must be less than 10 characters'
-        ],
         street: null,
         city: null,
         state: null,
         phoneNumber: null,
         card: 'Visa'
       },
+      nameRules: [
+        (v) => !!v || 'Name is required',
+        (v) => (v && v.length <= 10) || 'Name must be less than 10 characters'
+      ],
       cards: ['Visa', 'Mastercard', 'American Express']
     }
   },

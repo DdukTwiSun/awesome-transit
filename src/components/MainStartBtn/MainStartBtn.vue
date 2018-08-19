@@ -1,13 +1,19 @@
 <template>
   <div class="start_btn_div">
-    <input class="start_btn" type="button"/>
+    <input class="start_btn" type="button" v-on:click="regStart"/>
   </div>
 
 </template>
 
 <script>
 export default {
-  name: 'MainStartBtn'
+  name: 'MainStartBtn',
+  methods: {
+    regStart: function () {
+      console.log(this.regStart)
+      document.getElementsByClassName('start_btn').background = 'url(/static/1-1/Send_button.png) no-repeat'
+    }
+  }
 }
 </script>
 
