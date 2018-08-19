@@ -53,7 +53,7 @@ export default {
   }
   .proj_name_div .proj_name {
     position: relative;
-    top: 180px;
+    top: 170px;
     left: 180px;
   }
   .proj_name img {

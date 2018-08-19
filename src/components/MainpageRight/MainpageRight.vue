@@ -1,19 +1,22 @@
 <template>
   <div class="bus_img_div">
-    <img src="/static/1/bus.png"/>
+    <Stepper/>
+    <!--<img src="/static/1/bus.png"/>-->
   </div>
 </template>
 
 <script>
+import Stepper from '../Signup/Stepper'
 export default {
-  name: 'MainpageRight'
+  name: 'MainpageRight',
+  components: {Stepper}
 }
 </script>
 
 <style scoped>
   .bus_img_div {
     position: absolute;
-    width: 500px;
+    width: 675px;
     bottom: 0;
     right: 0;
   }

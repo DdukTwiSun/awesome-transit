@@ -20,4 +20,5 @@ export default {
   .bus_smoke img {
     max-width: 100%;
   }
+  .bus_smoke.overlay{}
 </style>
