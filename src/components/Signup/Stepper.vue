@@ -1,5 +1,4 @@
 <template>
-  <v-app>
   <div class="registration">
   <v-content>
     <v-container>
@@ -17,7 +16,7 @@
             <v-text-field label="Email" type="e-mail" v-model="registration.email" required></v-text-field>
             <v-text-field label="Password" type="password" v-model="registration.password" :rules="[(v) => !!v || 'Password is required']" required></v-text-field>
 
-            <v-btn color="primary" @click.native="step = 2">Continue</v-btn>
+            <v-btn color="blue" @click.native="step = 2">Continue</v-btn>
           </v-stepper-content>
           <v-stepper-content step="2">
 
@@ -27,7 +26,7 @@
             <v-text-field label="State" v-model="registration.state" required></v-text-field>
 
             <v-btn flat @click.native="step = 1">Previous</v-btn>
-            <v-btn color="primary" @click.native="step = 3">Continue</v-btn>
+            <v-btn color="blue" @click.native="step = 3">Continue</v-btn>
 
           </v-stepper-content>
           <v-stepper-content step="3">
@@ -38,15 +37,13 @@
               <v-btn color="cyan lighten-3" @click="checkAccount">REGISTER ACCOUNT</v-btn>
             </v-flex>
             <v-btn flat @click.native="step = 2">Previous</v-btn>
-            <v-btn color="primary" @click.prevent="submit">Save</v-btn>
-
+            <v-btn color="blue" @click.prevent="submit">Save</v-btn>
           </v-stepper-content>
         </v-stepper-items>
       </v-stepper>
     </v-container>
   </v-content>
   </div>
-  </v-app>
 </template>
 
 <script>
@@ -80,7 +77,7 @@ export default {
       alert('Account register complete!!')
     },
     submit () {
-      alert('registration done!!')
+      global.globalBus.$emit('account-submit')
     }
   }
 }
