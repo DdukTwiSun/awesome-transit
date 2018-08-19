@@ -5,11 +5,13 @@ import App from './App'
 import router from './router'
 import VueFire from 'vuefire'
 import Vuetify from 'vuetify'
+import { init } from './store'
+global.globalBus = new Vue()
 
+init()
 Vue.use(Vuetify)
 Vue.use(VueFire)
 
-global.globalBus = new Vue()
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

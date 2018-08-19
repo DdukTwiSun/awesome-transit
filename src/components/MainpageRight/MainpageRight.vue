@@ -36,9 +36,6 @@ export default {
       console.log(this.isStartClicked)
     },
     onSendClick () {
-      console.log('onSendClick')
-      this.isStartClicked = !(this.isStartClicked)
-      console.log(this.isStartClicked)
     }
   }
 }

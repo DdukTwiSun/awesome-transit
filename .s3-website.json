@@ -1,0 +1,12 @@
+{
+   "index": "index.html",
+   "region": "ap-northeast-1",
+   "uploadDir": "./dist",
+   "prefix": "",
+   "exclude": [],
+   "corsConfiguration": [],
+   "enableCloudfront": false,
+   "retries": 20,
+   "domain": "awesome-transit-demo",
+   "configFile": ".s3-website.json"
+}
