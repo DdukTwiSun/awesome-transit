@@ -1,7 +1,7 @@
 # <p align="center">Awesome-Transit</p>
 
 
-<p align="center"><a href="#"><img src="https://img.shields.io/badge/RUGAOHACK-2th-red.svg"></a><a href="https://github.com/DdukTwiSun/APS/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg"></a></p>
+<p align="center"><a href="#"><img src="https://img.shields.io/badge/RUGAOHACK-2nd-red.svg"></a><a href="https://github.com/DdukTwiSun/APS/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg"></a></p>
 
 ## Overview
 
